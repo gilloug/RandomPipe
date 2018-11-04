@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  <nav>
+    <div class="nav-wrapper indigo">
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li {% if request.path == "/" %}class="active"{% endif %}><a href="/"><i class="material-icons right">play_circle_outline</i>RandomPipe</a></li>
+        <li {% if request.path == "/history" %}class="active"{% endif %}><a href="history"><i class="material-icons right">video_library</i>History</a></li>
+        <li {% if request.path == "/favorites" %}class="active"{% endif %}><a href="favorites"><i class="material-icons right">star</i>Favorites</a></li>
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {% if connected == False %}
+        <li {% if request.path == "/login" %}class="active"{% endif %}><a href="login">Login<i class="material-icons right">person</i></a></li>
+        {% else %}
+        <li {% if request.path == "/logout" %}class="active"{% endif %}><a href="logout">Logout<i class="material-icons right">person_outline</i></a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  </body>
+</html>

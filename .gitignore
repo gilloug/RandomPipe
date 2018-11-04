@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/git,flask,python
 
+secrets.json
+
 ### Flask ###
 instance/*
 !instance/.gitignore

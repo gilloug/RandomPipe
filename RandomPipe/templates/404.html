@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html>
-  {% if connected == False %}
-  <script>
-    window.location = "{{APP_URL}}login"
-  </script>
-  {% endif %}
   {% include "nav_bar.html" %}
   <head>
     <!--Import Google Icon Font-->
@@ -12,7 +7,7 @@
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <!-- import our custom css -->
-    <link type="text/css" rel="stylesheet" href="css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="css/404.css"/>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,10 +16,10 @@
   <body>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
-    <div class="holder">
-      <iframe
-        src="https://www.youtube.com/embed/{{vid}}?autoplay={{autoplay}}&loop={{loop}}">
-      </iframe>
+    <div class="row">
+      <div class="col s12">
+        <img src="https://www.gehu.ac.in/content/dam/gehu/404.gif" alt="404 error">
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,37 @@
+<html>
+  {% if redirect or not connected%}
+  <script>
+    window.location = "{{APP_URL}}login";
+  </script>
+  {% endif %}
+  {% include "nav_bar.html" %}
+  <head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <!--Import our custom css-->
+    <link type="text/css" rel="stylesheet" href="css/logout.css"  media="screen,projection"/>
+  </head>
+
+  <body>
+    <div class="section"></div>
+    <main>
+      <center>
+        <img class="responsive-img" style="width: 250px;" src="http://24.media.tumblr.com/4d6f6fb7fae3bad7f28162ee5e63b3de/tumblr_mn66fisbuY1qznvrxo1_400.gif" />
+        <div class="section"></div>
+        <h5 class="indigo-text">Are you sure you want to logout ?</h5>
+        <div class="section"></div>
+        <div class="container">
+          <form class="col s12" method="post">
+            <div class="row">
+              <button type="submit" name="btn_login" class="col s2 offset-s5 btn btn-large waves-effect indigo">Logout</button>
+            </div>
+          </form>
+        </div>
+      </center>
+      <div class="section"></div>
+      <div class="section"></div>
+    </main>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  </body>
+</html>

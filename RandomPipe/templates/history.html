@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  {% if connected == False %}
+  <script>
+    window.location = "{{APP_URL}}login"
+  </script>
+  {% endif %}
+  {% include "nav_bar.html" %}
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- import our custom css -->
+    <link type="text/css" rel="stylesheet" href="css/index.css"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- import our custom js -->
+    <script type="text/javascript" src="js/history.js"></script>
+    <div class="container">
+      <ul class="collection with-header">
+        <li class="collection-header center-align indigo-text"><h4>Viewed Pipes</h4></li>
+        {% for pipe in pipes %}
+        <li class="collection-item avatar">
+          <img src="{{pipe["icon"]}}" alt="" class="circle">
+          <span class="title">{{pipe["title"]}}</span>
+          <p><i>Soon here:<br>A custom TAG</i></p>
+          <a href="#!" class="secondary-content">
+            <i pipe_id="{{pipe["pipe_id"]}}" class="play material-icons indigo-text">play_arrow</i>
+            {% if pipe["appreciation"] > 0 %}
+            <i _id="{{pipe["id"]}}" class="downvote material-icons green-text">star</i>
+            {% else %}
+            <i _id="{{pipe["id"]}}" class="material-icons red-text modal-trigger" href="#delete_{{pipe["id"]}}">delete_forever</i>
+            <i _id="{{pipe["id"]}}" class="upvote material-icons red-text">star_border
+            </i>
+            {% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </body>
+</html>
+
+{% for pipe in pipes %}
+<!-- Modal Structure -->
+<div id="delete_{{pipe["id"]}}" class="modal">
+  <div class="modal-content">
+    <h4>Deletion <b class="red-text">WARNING</b></h4>
+    <p>you are about to delete <b class="red-text">DEFINITIVELY</b> a pipe from your history.<br/>
+    Is that what you really want ?</p>
+  </div>
+  <div class="modal-footer">
+    <i _id="{{pipe["id"]}}" class="undo modal-close material-icons Medium green-text">undo</i>
+    <i _id="{{pipe["id"]}}" class="delete modal-close material-icons Medium red-text">delete_forever</i>
+  </div>
+</div>
+{% endfor %}

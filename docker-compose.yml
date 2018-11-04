@@ -3,6 +3,7 @@ services:
 
   randompipe:
     container_name: "RandomPipe"
+    restart: always
     environment:
       - FLASK_APP=RandomPipe
     build: .
@@ -10,3 +11,16 @@ services:
       - "5000:5000"
     volumes:
       - .:/app
+
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    restart: always
+    environment:
+      - MONGO_DATA_DIR=/database/data
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - /database:/home/thamin/Work/RandomPipe/database/
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --logpath=/dev/null --quiet

@@ -1,0 +1,11 @@
+html, body, iframe, .holder{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.holder{
+    margin: 0;
+    height: 93%;
+    width: 100%;
+}
