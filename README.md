@@ -6,9 +6,10 @@ ___
 This application uses ***docker-compose, python and flask***
 ___
 
-To use it, just set 3 missing variables in the __init__.py file:
+To use it, just set the missing variables in the secrets.json file:
 API_KEY -> you can get it at the url <https://randomyoutube.net/api>
-APP_URL -> yur application url, set it to http://127.0.0.1/ if you run the app in localhost
+APP_URL -> your application url, set it to http://127.0.0.1/ if you run the app in localhost
+DEVELOPER_KEY -> your google project secret key, get it on the developers console
 SECRET_KEY -> Your application secret key
 
 Then you only have to launch
