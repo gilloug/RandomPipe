@@ -27,6 +27,7 @@
     <div class="container">
       <ul class="collection with-header">
         <li class="collection-header center-align indigo-text"><h4>Favorite Pipes</h4></li>
+        {% if pipes %}
         {% for pipe in pipes %}
         <li class="collection-item avatar">
           <img src="{{pipe["icon"]}}" alt="" class="circle">
@@ -38,6 +39,7 @@
           </a>
         </li>
         {% endfor %}
+        {% endif %}
       </ul>
     </div>
   </body>

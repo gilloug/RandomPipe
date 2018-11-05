@@ -27,6 +27,7 @@
     <div class="container">
       <ul class="collection with-header">
         <li class="collection-header center-align indigo-text"><h4>Viewed Pipes</h4></li>
+        {% if pipes %}
         {% for pipe in pipes %}
         <li class="collection-item avatar">
           <img src="{{pipe["icon"]}}" alt="" class="circle">
@@ -44,11 +45,13 @@
           </a>
         </li>
         {% endfor %}
+        {% endif %}
       </ul>
     </div>
   </body>
 </html>
 
+{% if pipes %}
 {% for pipe in pipes %}
 <!-- Modal Structure -->
 <div id="delete_{{pipe["id"]}}" class="modal">
@@ -63,3 +66,4 @@
   </div>
 </div>
 {% endfor %}
+{% endif %}
