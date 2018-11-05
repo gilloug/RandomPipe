@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-    $('.fixed-action-btn').floatingActionButton();
-
     $(".play").click(function(ev){
         window.location = "/?pipe_id=" + $(this).attr("pipe_id");
     });
