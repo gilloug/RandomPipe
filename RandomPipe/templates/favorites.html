@@ -23,7 +23,7 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- import our custom js -->
-    <script type="text/javascript" src="js/history.js"></script>
+    <script type="text/javascript" src="js/favorites.js"></script>
     <div class="container">
       <ul class="collection with-header">
         <li class="collection-header center-align indigo-text"><h4>Favorite Pipes</h4></li>
@@ -34,13 +34,7 @@
           <p><i>Soon here:<br>A custom TAG</i></p>
           <a href="#!" class="secondary-content">
             <i pipe_id="{{pipe["pipe_id"]}}" class="play material-icons indigo-text">play_arrow</i>
-            {% if pipe["appreciation"] > 0 %}
             <i _id="{{pipe["id"]}}" class="downvote material-icons green-text">star</i>
-            {% else %}
-            <i _id="{{pipe["id"]}}" class="delete material-icons red-text">delete_forever</i>
-            <i _id="{{pipe["id"]}}" class="upvote material-icons red-text">star_border
-            </i>
-            {% endif %}
           </a>
         </li>
         {% endfor %}

@@ -224,7 +224,9 @@ def create_app():
     @app.route('/favorites')
     def favorites():
         """
-        #TODO
+        Display the list of pipes marked as favorites by the user
+        Play icon: Let the user watch them again
+        Star icon: Let the user mark a pipe as not favorite
         """
         if session.get("connected", None) and session.get("username", None):
             pipes = histories.get_favorites(DB, session["username"])
